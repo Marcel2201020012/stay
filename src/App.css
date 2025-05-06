@@ -21,3 +21,14 @@ body {
     width: 90%;
   }
 }
+
+@font-face {
+  font-family: 'inter-body-bold';
+  src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'inter-subtitle-regular';
+  src: url('/fonts/Inter_18pt-Light.ttf') format('truetype');
+}
