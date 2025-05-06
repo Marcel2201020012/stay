@@ -37,9 +37,9 @@ function Footer() {
         <div className="footer-section">
           <h4>Ikuti Kami</h4>
           <ul>
-            <li><FaFacebookF /> facebook</li>
-            <li><FaXTwitter /> x</li>
-            <li><FaInstagram /> instagram</li>
+            <li><a href="#"><FaFacebookF /> facebook</a></li>
+            <li><a href="#"><FaXTwitter /> x</a></li>
+            <li><a href="#"><FaInstagram /> instagram</a></li>
           </ul>
         </div>
 
