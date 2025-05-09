@@ -1,5 +1,5 @@
 import '../styles/Footer.css'
-import staylogo from '../images/logo-stay.png'
+import staylogo from '../images/logo-stay.svg'
 import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import bcaLogo from '../images/bca.png';
 import danaLogo from '../images/dana.png';

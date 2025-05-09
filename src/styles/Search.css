@@ -1,0 +1,99 @@
+.search-section {
+    background-image: url('../images/home_bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 678px;       
+    height: 100vh;            
+    position: relative;
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+  
+  .search-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+  }
+  
+  .search-text {
+    text-align: center;
+  }
+  
+  .headline {
+    font-family: 'inter-body-bold';
+    font-size: 49px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .mulai-disini-button {
+    background-color: #2D7CD6;
+    color: white;
+    padding: 10px 24px;
+    min-width: 200px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 60px;
+  }
+
+  .mulai-disini-button:hover{
+    background-color: #2970C1;
+  }
+  
+  .search-box {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+  }
+  
+  .search-field {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    min-width: 50px;
+  }
+  
+  .search-field input,
+  .search-field select {
+    font-family: 'inter-subtitle-regular';
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 11px;
+    width: 100%;
+  }
+  
+  .search-button {
+    background-color: #D6802D;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }  
+  
+  .search-button:hover {
+    background-color: #c17329;
+  }  
