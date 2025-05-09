@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/Search.css';
 
 import hotelSearchIcon from '../images/search-icons/hotel.svg'
