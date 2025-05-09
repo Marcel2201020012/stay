@@ -1,5 +1,5 @@
 import '../styles/Navbar.css'
-import staylogo from '../images/logo-stay.png'
+import staylogo from '../images/logo-stay.svg'
 import { FaBars, FaUserCircle } from 'react-icons/fa';
 
 function Navbar() {
