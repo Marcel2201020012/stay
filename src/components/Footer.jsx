@@ -1,10 +1,11 @@
 import '../styles/Footer.css'
 import staylogo from '../images/logo-stay.svg'
 import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
-import bcaLogo from '../images/bca.png';
-import danaLogo from '../images/dana.png';
-import mastercardLogo from '../images/mastercard.png';
-import paypalLogo from '../images/paypal.png';
+
+import BcaLogo from '../images/footer-icons/bca.svg';
+import DanaLogo from '../images/footer-icons/dana.svg';
+import PaypalLogo from '../images/footer-icons/paypal.svg';
+import MasterLogo from '../images/footer-icons/mastercard.svg';
 
 function Footer() {
   return (
@@ -27,10 +28,18 @@ function Footer() {
         <div className="footer-section">
           <h4>Partners</h4>
           <div className="partners-grid">
-            <img src={bcaLogo} alt="BCA" />
-            <img src={danaLogo} alt="DANA" />
-            <img src={mastercardLogo} alt="MasterCard" />
-            <img src={paypalLogo} alt="PayPal" />
+            <a href="https://www.bca.co.id" target="_blank" rel="noopener noreferrer">
+              <img src={BcaLogo} alt="BCA" />
+            </a>
+            <a href="https://www.dana.id" target="_blank" rel="noopener noreferrer">
+              <img src={DanaLogo} alt="DANA" />
+            </a>
+            <a href="https://www.mastercard.com" target="_blank" rel="noopener noreferrer">
+              <img src={MasterLogo} alt="MasterCard" />
+            </a>
+            <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer">
+              <img src={PaypalLogo} alt="PayPal" />
+            </a>
           </div>
         </div>
 

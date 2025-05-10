@@ -26,7 +26,6 @@
     width: 95%;
     margin: 0 auto;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 .form-title {
@@ -195,5 +194,5 @@ hr {
 
 .terms a {
     color: #007bff;
-    text-decoration: none;
+    text-decoration: underline;
 }

@@ -1,0 +1,214 @@
+.payment-page {
+    background-color: #EEF7FF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+}
+
+/*rincian hotel*/
+.rincian-hotel-container {
+    background-color: #f8fbff;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'inter-body-bold';
+    color: #000;
+}
+
+.hotel-name {
+    font-size: 16px;
+    font-family: 'inter-body-bold';
+    margin-bottom: 30px;
+}
+
+.date-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.check-info {
+    text-align: center;
+    font-family: 'inter-body-bold';
+    font-size: 16px;
+}
+
+.check-info .label {
+    font-family: 'inter-subtitle-regular';
+    font-size: 20px;
+}
+
+.day {
+    font-family: 'inter-body-bold';
+    font-size: 20px;
+    color: #D9D9D9;
+    text-decoration: underline;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'inter-body-bold';
+    font-size: 13px;
+    color: #A6A6A6;
+
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-top: 20px;
+    font-family: 'inter-body-bold';
+    font-size: 13px;
+}
+
+.guest-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.guest-info .icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/*payment option*/
+.payment-container {
+    background-color: #f8fbff;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.payment-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-family: 'inter-body-bold';
+    color: black;
+}
+
+.payment-logos {
+    display: flex;
+}
+
+.payment-logos img {
+    height: 30px;
+    margin-left: 10px;
+}
+
+/*voucher form*/
+.voucher-container {
+    background-color: #f8fbff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.coupon-input {
+    width: 70%;
+    padding: 10px;
+    font-family: 'inter-subtitle-regular';
+    font-size: 13px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.coupon-button {
+    background-color: #D6802D;
+    font-family: 'inter-body-bold';
+    font-size: 16px;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.coupon-button:hover{
+    background-color: #C17329;
+}
+
+/*total container*/
+.total-container {
+    background-color: #f8fbff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.total-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.total-label h2{
+    font-family: 'inter-body-bold';
+    font-size: 25px;
+    color: #000;
+}
+
+.total-price {
+    font-family: 'inter-body-bold';
+    font-size: 25px;
+    color: #D6802D;
+}
+
+.pay-button {
+    background-color: #D6802D;
+    font-family: 'inter-body-bold';
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.terms {
+    text-align: center;
+    color: #000;
+    font-family: 'inter-subtitle-regular';
+    font-size: 13px;
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: underline;
+}
