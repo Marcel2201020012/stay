@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,4 +18,41 @@
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    color: #102B4B;
+}
+
+.step-circle.active {
+    background-color: #2D7CD6;
+    color: white;
+}
+
+.step-label {
+    margin-top: 0.25rem;
+    color: #102B4B;
+}
+
+.step-label.active {
+    font-family: 'inter-body-bold';
+}
+
+.step-divider {
+    width: 32px;
+    height: 1px;
+    background-color: black;
 }

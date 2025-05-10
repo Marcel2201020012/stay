@@ -1,12 +1,16 @@
 import '../styles/Navbar.css'
-import staylogo from '../images/logo-stay.svg'
 import { FaBars, FaUserCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+import staylogo from '../images/logo-stay.svg'
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img src={staylogo} alt="Logo" className="navbar-logo" />
+        <Link to="/home">
+          <img src={staylogo} alt="Logo" className="navbar-logo" />
+        </Link>
         <ul className="navbar-menu">
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="#booking">Booking</a></li>

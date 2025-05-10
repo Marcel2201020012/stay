@@ -21,10 +21,13 @@
   }
   
   .search-text {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
   }
   
-  .headline {
+  p.headline {
     font-family: 'inter-body-bold';
     font-size: 49px;
     font-weight: bold;
