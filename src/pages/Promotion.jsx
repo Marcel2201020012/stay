@@ -39,13 +39,13 @@ function Promotion() {
     }, []);
 
     return (
-        <div className="promotion-blog">
+        <div className="promotion-page">
             <Navbar />
-            <div className="promo-banner">
-                <img src={promoBanner1} alt="Banner" className="banner-img" />
-            </div>
             <div className="promo-section">
-
+                <div className="promo-banner">
+                    <img src={promoBanner1} alt="Banner" className="banner-img" />
+                </div>
+                
                 <div className="promo-text">
                     <p>Selalu ada yang spesial bagi yang ingin berhemat,</p>
                     <p>Menginap di hotel dalam negeri jadi lebih murah!</p>
