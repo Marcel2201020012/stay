@@ -1,0 +1,62 @@
+.promotion-page {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.promo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    padding: 32px 16px;
+    background-color: #fff;
+}
+
+.promo-text p {
+    margin: 0;
+    font-size: 25px;
+    font-family: 'inter-subtitle-regular';
+    line-height: 12px;
+}
+
+.promo-button {
+    margin: 24px auto;
+    background-color: #BED6F2;
+    border: none;
+    padding: 24px 40px;
+    font-size: 20px;
+    font-family: 'inter-body-bold';
+    border-radius: 50px;
+}
+
+.promo-list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-right: 120px;
+}
+
+.promo-list::-webkit-scrollbar {
+    display: none;
+}
+
+.dot-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}

@@ -1,0 +1,82 @@
+.blog-page {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.hotel-container {
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hotel-header h1 {
+    font-size: 49px;
+    font-family: 'inter-body-bold';
+    margin-bottom: 8px;
+}
+
+.hotel-subinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.author {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.blog-info-icons {
+  width: 45px;
+  object-fit: contain;
+}
+
+.icons {
+  display: flex;
+  gap: 24px;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icons img {
+  width: 25px;
+}
+
+.hotel-image-section {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.hotel-image-section img {
+    width: 50%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.hotel-image-section .description {
+    flex: 1;
+    font-size: 20px;
+    font-family: 'inter-subtitle-regular';
+    color: #444;
+}
+
+.hotel-text p {
+    margin-bottom: 16px;
+    color: #333;
+    font-size: 20px;
+    font-family: 'inter-subtitle-regular';
+}
