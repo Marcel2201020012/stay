@@ -1,0 +1,92 @@
+.coupon-card {
+    position: relative;
+    width: 600px;
+    background: #f9fafd;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    margin: 0 12px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.ribbon {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: #EF7A12;
+    color: white;
+    font-size: 12px;
+    font-family: 'inter-body-bold';
+    padding: 6px 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+.coupon-content {
+    display: flex;
+    padding: 20px;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.left-section {
+    flex: 1;
+}
+
+.left-section h4 {
+    font-size: 20px;
+    font-family: 'inter-body-bold';
+}
+
+.left-section p {
+    font-size: 13px;
+    font-family: 'inter-subtitle-regular';
+    margin: 0;
+    color: #555;
+}
+
+.divider {
+    width: 1px;
+    height: 60px;
+    border-left: 2px dashed #ccc;
+    margin: 0 16px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coupon-code {
+    display: flex;
+    align-items: center;
+    background: #eee;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'inter-body-bold';
+    font-size: 11px;
+    color: #565656;
+    margin-bottom: 8px;
+}
+
+.coupon-code img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.right-section button {
+    background-color: #2D7CD6;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-family: 'inter-body-bold';
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.right-section button:hover {
+    background-color: #2970C1;
+}
