@@ -9,7 +9,8 @@ function Home() {
   return (
     <>
     <Navbar/>
-    <Search/>    <main className="home-container">
+    <Search/>    
+    <main className="home-container">
         <h2 className="section-title">Temukan Hotel-Hotel Terdekat</h2>
         <div className="hotel-grid">
           {hotels.map((hotel) => (
