@@ -45,10 +45,9 @@
   color: gold;
 }
 
-.price {
+.price-button-row .price {
   font-weight: bold;
-  color: #C17329 !important;
-  /* margin: 8px 0; */
+  color: #C17329;
 }
 
 .price-button-row {

@@ -67,7 +67,6 @@ function Promotion() {
                 </div>
             </div>
 
-
             <Footer />
         </div>
     );
