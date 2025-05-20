@@ -12,8 +12,11 @@ function HotelCard({ hotel }) {
         <p className="rating">
           <FaStar className="star" /> {hotel.rating}/5.0 ({hotel.reviews})
         </p>
-        <p className="price">{hotel.price}</p>
-        <button className="btn-check">Cek Hotel ➜</button>
+        <div className="price-button-row">
+          <p className="price">{hotel.price}</p>
+          <button className="btn-check">Cek Hotel ➜</button>
+        </div>
+
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #f9fafb;
+  /* width: 95%; */
 }
 
 .home-content {
@@ -33,7 +34,7 @@
 }
 
 .cta-button {
-  background-color: #f59e0b;
+  background-color: #D6802D;
   color: #fff;
   font-size: 16px;
   padding: 12px 28px;
@@ -49,11 +50,48 @@
   transform: translateY(-2px);
 }
 
+.hotel-title {
+  font-family: 'inter-body-bold';
+  font-size: 36px;
+  text-align: center;
+  margin: 24px;
+}
+
 .hotel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 380px);
   gap: 20px;
-  padding: 24px;
   justify-content: center;
-  
+  width: 100%;
 }
+
+.promo-title {
+  font-family: 'inter-body-bold';
+  font-size: 36px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.blog-title {
+  font-family: 'inter-body-bold';
+  font-size: 36px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 20px;
+  justify-content: center;
+}
+

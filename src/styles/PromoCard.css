@@ -1,0 +1,30 @@
+.promo-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.promo-image {
+  width: 380px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.promo-button {
+  background: #D6802D;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.promo-button:hover {
+  background-color: #c27020;
+}
