@@ -1,8 +1,15 @@
 import React from 'react';
 import '../styles/HotelCard.css';
 import { FaMapMarkerAlt, FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
 
 function HotelCard({ hotel }) {
+  const navigate = useNavigate(); // ✅ Inisialisasi navigator
+
+  const handleClick = () => {
+    navigate(`/hotel/${hotel.id}`); // ✅ Navigasi ke halaman detail berdasarkan ID
+  };
+
   return (
     <div className="hotel-card">
       <img src={hotel.image} alt={hotel.name} className="hotel-image" />
@@ -14,9 +21,10 @@ function HotelCard({ hotel }) {
         </p>
         <div className="price-button-row">
           <p className="price">{hotel.price}</p>
-          <button className="btn-check">Cek Hotel ➜</button>
+          <button className="btn-check" onClick={handleClick}>
+            Cek Hotel ➜
+          </button>
         </div>
-
       </div>
     </div>
   );
