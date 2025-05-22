@@ -11,6 +11,15 @@ import wifi from '../images/facility-icons/wifi.png';
 import resto from '../images/facility-icons/resto.png';
 import taxi from '../images/facility-icons/taxi.png';
 
+import kamar1 from '../images/hotel-images/kamar1.png'
+import kamar2 from '../images/hotel-images/kamar2.png'
+import kamar3 from '../images/hotel-images/kamar3.png'
+
+import bedd from '../images/facility-icons/bedd.png';
+import room from '../images/facility-icons/kolam.png';
+import city from '../images/facility-icons/wifi.png';
+import balcony from '../images/facility-icons/resto.png';
+
 const hotelDetails = [
   {
     id: 1,
@@ -26,7 +35,7 @@ const hotelDetails = [
       ck4,
       ck5,
       ck6,
-    
+
     ],
     facilities: ["AC", "Kolam", "WiFi", "Restoran", "Taksi Lokal"],
     facilityIcons: [
@@ -45,16 +54,73 @@ const hotelDetails = [
     ],
     rooms: [
       {
+        id: 1,
         name: "Deluxe Twin City View",
-        bed: "2 Twin Bed",
-        size: "27 m²",
-        view: "City View",
-        balcony: true,
-        price: 600000,
-        available: 5,
-        image: "/images/hotel-images/room1.jpg"
+        description: "Deluxe Twin-Regular Breakfast 2 pax",
+        image: kamar1,
+        details: [
+          { icon: bedd, text: "2 Twin Bed" },
+          { icon: room, text: "Room size: 27 m²/291 ft²" },
+          { icon: city, text: "City View" },
+          { icon: balcony, text: "Balcony" }
+        ],
+        cancellation: "Free Cancellation 20 April 12.59",
+        availability: "5 Kamar Tersisa!",
+        price: 600000
+      },
+      {
+        id: 2,
+        name: "Deluxe Queen Bed",
+        description: "Deluxe Queen Bed-Regular Breakfast 2 pax",
+        image: kamar2,
+        details: [
+          { icon: bedd, text: "2 Twin Bed" },
+          { icon: room, text: "Room size: 27 m²/291 ft²" },
+          { icon: city, text: "City View" },
+          { icon: balcony, text: "Balcony" }
+        ],
+        cancellation: "Free Cancellation 20 April 12.59",
+        availability: "5 Kamar Tersisa!",
+        price: 600000
+      },
+      {
+        id: 3,
+        name: "Executive King",
+        description: "Executive-Regular Breakfast 2 pax",
+        image: kamar3,
+        details: [
+          { icon: bedd, text: "2 Twin Bed" },
+          { icon: room, text: "Room size: 27 m²/291 ft²" },
+          { icon: city, text: "City View" },
+          { icon: balcony, text: "Balcony" }
+        ],
+        cancellation: "Free Cancellation 20 April 12.59",
+        availability: "5 Kamar Tersisa!",
+        price: 600000
+      },
+    ],
+    // Dalam objek hotel
+    reviews: [
+      {
+        id: 1,
+        name: 'Aldy. R',
+        score: 9,
+        comment: "Great Hotel, I've best experience in this hotel, good job to all employees and management"
+      },
+      {
+        id: 2,
+        name: 'Irfan',
+        score: 9,
+        comment: "I stayed here for one night and it was a pleasant experience. The room was huge, especially the bathroom, which was neat and clean. It's an affordable price too. The location is precisely across the street with a plaza nearby. The staff were warm and friendly. It was an unforgettable experience overall."
       }
-    ]
+    ],
+    ratingSummary: {
+      score: 4.9,
+      label: 'Very Good',
+      totalReviews: 674
+    }
+
+
   },
   // Tambah hotel lainnya...
 ];
