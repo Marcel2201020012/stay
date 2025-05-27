@@ -7,8 +7,9 @@ import Blog from './pages/Blog';
 import Booking from './pages/Booking';
 import Payment from './pages/Payment';
 import Confirmation from './pages/Confirmation';
-import Daftar from './pages/Daftar';
-import Masuk from './pages/masuk';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
       <Route path="/booking" element={<Booking />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/confirmation" element={<Confirmation />} />
-      <Route path="/Daftar" element={<Daftar />} />
-      <Route path="/masuk" element={<Masuk />} />
+      <Route path="/Register" element={<Register />} />
+      <Route path="/Login" element={<Login />} />
     </Routes>
   );
 }
