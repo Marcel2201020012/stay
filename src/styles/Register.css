@@ -5,7 +5,6 @@ html, body, #root {
   height: 100%;
   font-family: 'inter-subtitle-regular'; 
   background-color: #f0f2f5; 
-  overflow: hidden; 
 }
 
 .register-page-container {
