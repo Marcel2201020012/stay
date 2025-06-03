@@ -1,0 +1,94 @@
+.hotel-pencarian-card {
+  display: flex;
+  background-color: #ffff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1181px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  gap: 20px;
+}
+
+.hotel-pencarian-image {
+  width: 454px;
+  height: 315px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.hotel-pencarian-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.hotel-title-pencarian {
+  font-size: 24px;
+  font-weight:bolder;
+  margin-bottom: 4px;
+}
+
+.hotel-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.hotel-facilities {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.hotel-facilities li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.facility-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.star-review {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items:start;
+}
+.star-row-pencarian {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 10px;
+  width: 70px;
+}
+
+.price-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-price {
+  font-size: 18px;
+  color: #C17329;
+  font-weight: bold;
+}
+
+.hotel-btn {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.hotel-btn:hover {
+  background-color: #e06f00;
+}
