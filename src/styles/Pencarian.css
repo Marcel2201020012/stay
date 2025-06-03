@@ -1,0 +1,15 @@
+.pencarian-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* untuk menengahkan isi */
+  min-height: 100vh;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.blog-grid-pencarian {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 20px;
+  justify-content: center;
+}
