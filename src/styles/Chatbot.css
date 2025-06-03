@@ -18,6 +18,12 @@
     padding: 20px;
 }
 
+.chatbot-sidebar h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .sidebar-header {
     display: flex;
     align-items: center;
@@ -27,30 +33,87 @@
 }
 
 .new-chat-btn {
-    background-color: black;
+    background-color: #242723;
     color: white;
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
+}
+
+.chat-panel {
+     position: relative;
+    background-color: rgba(30, 30, 30, 0.54);
+    /* #1E1E1E with 54% opacity */
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.chat-search {
+    display: flex;
+    align-items: center;
+    background-color: #424242;
+    padding: 8px 12px;
+    border-radius: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.chat-search .search-icon {
+    color: #bdbdbd;
+    font-size: 16px;
+    margin-right: 8px;
 }
 
 .chat-search input {
-    padding: 8px;
-    width: 100%;
-    border-radius: 4px;
+    background: transparent;
     border: none;
-    margin-bottom: 20px;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 0;
 }
 
-.chat-history p {
-    margin: 10px 0;
-    background-color: #295f96;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
+.chat-history {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
+
+.chat-history-item {
+    display: flex;
+    align-items: center;
+    background-color: #424242;
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-history-item:hover {
+    background-color: #3a3a3a;
+}
+
+.chat-icon {
+    margin-right: 12px;
+    color: #ffffffcc;
+}
+
+.menu-icon {
+    margin-left: auto;
+    color: #ffffffcc;
+}
+
+.chat-history-item p {
+    margin: 0;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
 
 /* Chatbox utama */
 .chatbot-main {
@@ -65,9 +128,13 @@
     flex: 1;
     overflow-y: auto;
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .user-message {
+    align-self: flex-end;
     background-color: #ccc;
     padding: 12px 16px;
     border-radius: 12px;
@@ -77,12 +144,18 @@
 }
 
 .card-wrapper {
-  margin-bottom: 24px;
-  cursor: pointer;
-  max-width: 200px;
-  min-height: 320px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    max-width: 300px;
+    min-height: 320px;
 }
 
+.ai-response h2 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
 
 .ai-response p {
     margin-bottom: 10px;
