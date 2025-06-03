@@ -4,20 +4,23 @@ import '../styles/Chatbot.css';
 import hotelData from '../data/HotelDetails';
 import HotelCard from '../components/HotelCard';
 import hotels from '../data/HomeSection'
+import stay_circle from '../images/stay_circle.png';
 
 function Chatbot() {
     const navigate = useNavigate();
 
-    const handleHotelClick = (id) => {
-        navigate(`/hotel/${id}`);
-    };
+    // const handleHotelClick = (id) => {
+    //     navigate(`/hotel/${id}`);
+    // };
 
     return (
         <div className="chatbot-container">
             {/* Sidebar kiri */}
             <div className="chatbot-sidebar">
                 <div className="sidebar-header">
-                    <div className="logo-icon">🏠</div>
+                    <div className="logo-icon">
+                        <img src= {stay_circle} alt="" />
+                    </div>
                     <div className="dots">● ● ●</div>
                 </div>
                 <button className="new-chat-btn">Begin a New Chat</button>

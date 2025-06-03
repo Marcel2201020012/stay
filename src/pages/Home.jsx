@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import KuponList from "../components/Kupon_List";
+import FloatingChatButton from '../components/FloatingIcon';
 
 import React, { useRef, useState, useEffect } from 'react';
 
@@ -95,6 +96,7 @@ function Home() {
             <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
+        <FloatingChatButton />
       </div>
       <Footer />
     </>

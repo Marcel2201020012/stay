@@ -4,6 +4,10 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+.logo-icon {
+    max-width: 70px;
+}
+
 /* Sidebar */
 .chatbot-sidebar {
     width: 280px;
@@ -75,7 +79,7 @@
 .card-wrapper {
   margin-bottom: 24px;
   cursor: pointer;
-  min-width: 380px;
+  max-width: 200px;
   min-height: 320px;
 }
 
