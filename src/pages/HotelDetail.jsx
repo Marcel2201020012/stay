@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "../components/Navbar"
+import Navbar_search from "../components/Navbar_search"
 import Footer from "../components/Footer"
 import { useParams } from 'react-router-dom';
 import hotelDetails from '../data/HotelDetails';
@@ -19,6 +20,7 @@ function HotelDetail() {
     return (
         <>
             <Navbar />
+            <Navbar_search/>
             <div className="hotel-detail-container">
                 <div className="image-gallery">
                     <div className="main-image">

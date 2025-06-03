@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Chatbot.css';
-import hotelData from '../data/HotelDetails';
+import HotelData from '../data/HotelDetails';
 import HotelCard from '../components/HotelCard';
 import hotels from '../data/HomeSection'
 import stay_circle from '../images/stay_circle.png';

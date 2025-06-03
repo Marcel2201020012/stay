@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import HotelDetail from './pages/HotelDetail';
 import Chatbot from './pages/Chatbot'; // ✅ Tambahkan import Chatbot
+import Pencarian from './pages/Pencarian';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/confirmation" element={<Confirmation />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/pencarian" element={<Pencarian />} />
       <Route path="/hotel/:id" element={<HotelDetail />} />
     </Routes>
   );

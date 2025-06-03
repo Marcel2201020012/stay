@@ -7,6 +7,7 @@
   max-width: 380px;
   text-align: center;
   margin: 0 auto;
+  font-family: 'inter-subtitle-regular';
 }
 
 .blog-image {
@@ -17,16 +18,19 @@
 
 .blog-text {
   padding: 16px;
+  font-family: 'inter-subtitle-regular';
 }
 
 .blog-text h3 {
   font-size: 20px;
   font-weight: 700;
   color: #111827;
+  font-family: 'inter-subtitle-regular';
 }
 
 .blog-text p {
   font-size: 16px;
   color: #374151;
+  font-family: 'inter-subtitle-regular';
 }
 
