@@ -7,6 +7,7 @@ import hotels from '../data/HomeSection'
 import stay_circle from '../images/stay_circle.png';
 import { FaSearch } from 'react-icons/fa';
 import { FaCommentAlt, FaEllipsisV } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Chatbot() {
     const navigate = useNavigate();
@@ -20,9 +21,12 @@ function Chatbot() {
             {/* Sidebar kiri */}
             <div className="chatbot-sidebar">
                 <div className="sidebar-header">
-                    <div className="logo-icon">
+                    <Link to="/home">
+                     <div className="logo-icon">
                         <img src={stay_circle} alt="" />
                     </div>
+                    </Link>
+                   
                     <div className="dots">● ● ●</div>
                 </div>
                 <button className="new-chat-btn">Begin a New Chat +</button>
