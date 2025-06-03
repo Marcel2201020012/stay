@@ -98,6 +98,7 @@ function Home() {
         </div>
         <FloatingChatButton />
       </div>
+      <br></br>
       <Footer />
     </>
   )

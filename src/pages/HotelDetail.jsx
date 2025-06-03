@@ -20,7 +20,7 @@ function HotelDetail() {
     return (
         <>
             <Navbar />
-            <Navbar_search/>
+            <Navbar_search />
             <div className="hotel-detail-container">
                 <div className="image-gallery">
                     <div className="main-image">

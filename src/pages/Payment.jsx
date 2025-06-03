@@ -13,8 +13,14 @@ import BniLogo from '../images/payment-icons/BNI.svg'
 import MasterLogo from '../images/payment-icons/Master.svg'
 import VisaLogo from '../images/payment-icons/Visa.svg'
 
+import { Link, useLocation } from 'react-router-dom';
 
 function Payment() {
+    const location = useLocation();
+    const { total, contact, extraDetails } = location.state || {};
+
+    if (!total) return <div>Total harga hotel tidak ditemukan</div>;
+
     return (
         <div className="payment-page">
             <Navbar />
@@ -49,7 +55,22 @@ function Payment() {
 
                 <div className="section">
                     <strong>Permintaan Tambahan:</strong>
-                    <p>-</p>
+                    {extraDetails &&
+                        (extraDetails.jenisKasur ||
+                            extraDetails.lantai ||
+                            extraDetails.checkIn ||
+                            extraDetails.checkOut ||
+                            extraDetails.lainnya) ? (
+                        <ul>
+                            {extraDetails.jenisKasur && <li>Jenis Kasur: {extraDetails.jenisKasur}</li>}
+                            {extraDetails.lantai && <li>Lantai: {extraDetails.lantai}</li>}
+                            {extraDetails.checkIn && <li>Check-In: {extraDetails.checkIn}</li>}
+                            {extraDetails.checkOut && <li>Check-Out: {extraDetails.checkOut}</li>}
+                            {extraDetails.lainnya && <li>Catatan: {extraDetails.lainnya}</li>}
+                        </ul>
+                    ) : (
+                        <p>Tidak ada permintaan tambahan</p>
+                    )}
                 </div>
 
                 <hr style={{ borderColor: 'black' }} />
@@ -59,8 +80,8 @@ function Payment() {
                     <div className="guest-info">
                         <div className="icon"><img src={ProfilLogo} alt="Logo" className="profile-logo" /></div>
                         <div>
-                            <div>Agus Susanto</div>
-                            <div>+62123456789</div>
+                            <div>{contact?.userName}</div>
+                            <div>{contact?.noHp}</div>
                         </div>
                     </div>
                 </div>
@@ -108,9 +129,11 @@ function Payment() {
             <div className="total-container">
                 <div className="total-info">
                     <span className="total-label"><h2>Total Harga</h2></span>
-                    <span className="total-price">Rp 990.000,-</span>
+                    <span className="total-price">Rp {total.toLocaleString('id-ID')},-</span>
                 </div>
-                <button className="pay-button">Bayar Sekarang</button>
+                <Link to="/confirmation" state={total}>
+                    <button className="pay-button">Bayar Sekarang</button>
+                </Link>
                 <p className="terms">
                     Dengan lanjut ke pembayaran, Anda telah menyetujui{' '}
                     <a href="#">Syarat dan Ketentuan</a>, serta{' '}

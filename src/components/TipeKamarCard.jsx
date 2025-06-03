@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/TipeKamarCard.css';
 
+import { Link } from 'react-router-dom';
+
 function TipeKamarCard({ room }) {
   return (
     <div className="tipe-kamar-card">
@@ -25,7 +27,9 @@ function TipeKamarCard({ room }) {
           <span className="availability">{room.availability}</span>
           <div className="price-reserve">
             <span className="price">Rp{room.price.toLocaleString('id-ID')}</span>
-            <button className="reserve-btn">Reservasi</button>
+            <Link to="/booking" state={{room}}>
+              <button className="reserve-btn">Reservasi</button>
+            </Link>
           </div>
         </div>
       </div>

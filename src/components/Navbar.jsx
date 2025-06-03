@@ -12,8 +12,12 @@ function Navbar() {
           <img src={staylogo} alt="Logo" className="navbar-logo" />
         </Link>
         <ul className="navbar-menu">
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#booking">Booking</a></li>
+          <Link to="/home">
+            <li><a>Beranda</a></li>
+          </Link>
+          <Link to="/pencarian">
+            <li><a>Booking</a></li>
+          </Link>
           <li><a href="#dukungan">Dukungan</a></li>
           <li className="dropdown">
             <a href="#lainnya">Lainnya ▾</a>

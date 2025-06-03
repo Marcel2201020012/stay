@@ -6,6 +6,8 @@ import guestSearchIcon from '../images/search-icons/guest.svg'
 import glassSearchIcon from '../images/search-icons/glass.svg'
 import barrierSearchIcon from '../images/search-icons/barrier.svg'
 
+import { Link } from 'react-router-dom';
+
 const SearchBar = () => {
     return (
         <div className='search-section'>
@@ -15,7 +17,9 @@ const SearchBar = () => {
                     <p className="headline">Stay With Us Aja!</p>
                 </div>
 
-                <button className="mulai-disini-button">Mulai Disini</button>
+                <Link to="/pencarian">
+                    <button className="mulai-disini-button">Mulai Disini</button>
+                </Link>
 
                 <div className="search-box">
                     <span className="icon">

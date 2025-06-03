@@ -2,10 +2,28 @@ import "../styles/Booking.css";
 import Navbar from "../components/Booking_Navbar";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+
+import { Link } from 'react-router-dom';
 
 import megaphoneIcon from '../images/booking-icons/megaphone_icon.svg'
 
+
 function Booking() {
+    const location = useLocation();
+    const { room } = location.state || {};
+
+    if (!room) return <div>Data Hotel Tidak Ditemukan</div>;
+
+    const pajak = room.price * 0.1;
+    const total = room.price + pajak;
+
+    const [formData, setFormData] = useState({
+        userName: "",
+        noHp: "",
+        email: "",
+    });
+
     const [options, setOptions] = useState({
         jenisKasur: false,
         lantai: false,
@@ -13,6 +31,28 @@ function Booking() {
         checkOut: false,
         lainnya: false,
     });
+
+    const [extraDetails, setExtraDetails] = useState({
+        jenisKasur: "",
+        lantai: "",
+        checkIn: "",
+        checkOut: "",
+        lainnya: "",
+    });
+
+    const handleChange = (e) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+     const handleChangeDetails = (e) => {
+        setExtraDetails(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    };
 
     const toggleOption = (key) => {
         setOptions((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -34,7 +74,7 @@ function Booking() {
 
                 <div className="form-group">
                     <label htmlFor="fullName">Nama Lengkap</label>
-                    <input type="text" id="fullName" name="fullName" />
+                    <input type="text" id="userName" name="userName" value={formData.userName} onChange={handleChange} />
                 </div>
 
                 <div className="form-row">
@@ -45,7 +85,7 @@ function Booking() {
 
                     <div className="form-group">
                         <label htmlFor="phone">Nomor Hp</label>
-                        <input type="tel" id="phone" name="phone" />
+                        <input type="tel" id="noHp" name="noHp" value={formData.noHp} onChange={handleChange} />
                     </div>
                 </div>
             </div>
@@ -109,33 +149,33 @@ function Booking() {
                 <div className="conditional-options">
                     {options.jenisKasur && (
                         <div className="option-box">
-                            <label><input type="radio" name="bed" /> Deluxe</label>
-                            <label><input type="radio" name="bed" /> Twin</label>
+                            <label><input type="radio" name="jenisKasur" value="Deluxe" checked={extraDetails.jenisKasur === "Deluxe"} onChange={handleChangeDetails}/>Deluxe</label>
+                            <label><input type="radio" name="jenisKasur" value="Twin" checked={extraDetails.jenisKasur === "Twin"} onChange={handleChangeDetails}/>Twin</label>
                         </div>
                     )}
 
                     {options.lantai && (
                         <div className="option-box">
-                            <label><input type="radio" name="floor" /> Atas</label>
-                            <label><input type="radio" name="floor" /> Bawah</label>
+                            <label><input type="radio" name="lantai" value="Atas" checked={extraDetails.lantai === "Atas"} onChange={handleChangeDetails}/> Atas</label>
+                            <label><input type="radio" name="lantai" value="Bawah" checked={extraDetails.lantai === "Bawah"} onChange={handleChangeDetails}/> Bawah</label>
                         </div>
                     )}
 
                     {options.checkIn && (
                         <div className="option-box-horizontal">
-                            <label><input type="time" /></label>
+                            <label><input type="time" name="checkIn" value={extraDetails.checkIn} onChange={handleChangeDetails}/></label>
                         </div>
                     )}
 
                     {options.checkOut && (
                         <div className="option-box-horizontal">
-                            <label><input type="time" /></label>
+                            <label><input type="time"  name="checkOut" value={extraDetails.checkOut} onChange={handleChangeDetails}/></label>
                         </div>
                     )}
 
                     {options.lainnya && (
                         <div className="option-box-horizontal">
-                            <input type="text" placeholder="Keterangan lainnya..." />
+                            <input type="text"  name="lainnya" placeholder="Keterangan lainnya..." value={extraDetails.lainnya} onChange={handleChangeDetails}/>
                         </div>
                     )}
                 </div>
@@ -147,23 +187,25 @@ function Booking() {
 
                     <div className="price-row">
                         <span>Harga Kamar</span>
-                        <span>Rp 900.000,-</span>
+                        <span>Rp {room.price.toLocaleString('id-ID')},-</span>
                     </div>
 
                     <div className="price-row">
                         <span>Pajak</span>
-                        <span>Rp 90.000,-</span>
+                        <span>Rp {pajak.toLocaleString('id-ID')},-</span>
                     </div>
 
                     <hr />
 
                     <div className="price-row total">
                         <strong>Total</strong>
-                        <strong>Rp 990.000,-</strong>
+                        <strong>Rp {total.toLocaleString('id-ID')},-</strong>
                     </div>
 
                     <div className="pay-button-container">
-                        <button className="pay-button">Lanjutkan Pembayaran ➜</button>
+                        <Link to="/payment" state={{ total, contact: formData, extraDetails}}>
+                            <button className="pay-button">Lanjutkan Pembayaran ➜</button>
+                        </Link>
                     </div>
 
                     <p className="terms">
@@ -175,7 +217,7 @@ function Booking() {
             </div>
 
             <br></br>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Promotion from './pages/Promotion';
@@ -10,27 +10,30 @@ import Confirmation from './pages/Confirmation';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import HotelDetail from './pages/HotelDetail';
-import Chatbot from './pages/Chatbot'; // ✅ Tambahkan import Chatbot
+import Chatbot from './pages/Chatbot';
 import Pencarian from './pages/Pencarian';
+import RestartScroll from './components/RestartScroll';
 
 function App() {
   return (
-    <Routes>
-      {/* ✅ Initial page diarahkan ke Chatbot */}
-      <Route path="/" element={<Navigate to="/chatbot" />} />
-      <Route path="/chatbot" element={<Chatbot />} /> {/* ✅ Rute Chatbot */}
+    <Router>
+      <RestartScroll />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/chatbot" element={<Chatbot />} />
 
-      <Route path="/home" element={<Home />} />
-      <Route path="/promotion" element={<Promotion />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/booking" element={<Booking />} />
-      <Route path="/payment" element={<Payment />} />
-      <Route path="/confirmation" element={<Confirmation />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/pencarian" element={<Pencarian />} />
-      <Route path="/hotel/:id" element={<HotelDetail />} />
-    </Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/promotion" element={<Promotion />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/pencarian" element={<Pencarian />} />
+        <Route path="/hotel/:id" element={<HotelDetail />} />
+      </Routes>
+    </Router>
   );
 }
 
