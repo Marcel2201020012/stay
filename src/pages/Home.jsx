@@ -51,7 +51,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Search />
+      <Search hotelData={hotels}/>
       <br></br>
       <div className="home-container">
 

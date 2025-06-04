@@ -10,7 +10,6 @@ import TipeKamarCard from '../components/TipeKamarCard';
 import ReviewCard from '../components/ReviewCard';
 import '../styles/HotelDetail.css';
 
-
 function HotelDetail() {
     const { id } = useParams();
     const hotel = hotelDetails.find(h => h.id === parseInt(id));

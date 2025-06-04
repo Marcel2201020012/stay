@@ -6,9 +6,25 @@ import guestSearchIcon from '../images/search-icons/guest.svg'
 import glassSearchIcon from '../images/search-icons/glass.svg'
 import barrierSearchIcon from '../images/search-icons/barrier.svg'
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-const SearchBar = () => {
+const SearchBar = ({ hotelData }) => {
+    const [search, setSearch] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        const matchedHotel = hotelData.find(hotel =>
+            hotel.name.toLowerCase().includes(search.toLowerCase())  // FIXED
+        );
+
+        if (matchedHotel) {
+            navigate(`/hotel/${matchedHotel.id}`);
+        } else {
+            alert("Hotel tidak ditemukan!");
+        }
+    };
+
     return (
         <div className='search-section'>
             <div className="search-bar-wrapper">
@@ -27,7 +43,7 @@ const SearchBar = () => {
                     </span>
 
                     <div className="search-field">
-                        <input type="text" placeholder="Mau nginap di mana?" />
+                        <input type="text" placeholder="Mau nginap di mana?" value={search} onChange={(e) => setSearch(e.target.value)} />
                     </div>
 
                     <img src={barrierSearchIcon} alt="barrier icon" />
@@ -77,7 +93,7 @@ const SearchBar = () => {
                         </select>
                     </div>
 
-                    <button className="search-button">
+                    <button className="search-button" onClick={handleSearch}>
                         <img src={glassSearchIcon} alt="glass icon" />
                     </button>
                 </div>
