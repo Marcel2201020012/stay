@@ -43,7 +43,10 @@ const Login = () => {
               </div>
                <br></br>
               <br></br>
-              <button type="submit" className="btn-Login">Login</button> 
+              <Link to="/home">
+              <button type="submit" className="btn-Login">Login</button>
+              </Link>
+              
             </form>
 
             <div className="or-separator">
