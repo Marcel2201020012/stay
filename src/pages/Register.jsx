@@ -55,7 +55,9 @@ const Register = () => {
               </div>
                <br></br>
               <br></br>
-              <button type="submit" className="btn-register">Sign In</button> {/* Mengubah teks tombol */}
+              <Link to="/Login">
+              <button type="submit" className="btn-register">Sign In</button>
+              </Link>
             </form>
 
             <div className="or-separator">
