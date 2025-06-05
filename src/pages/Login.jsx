@@ -26,7 +26,7 @@ const Login = () => {
               <div className="form-group">
                 <label htmlFor="email">E-mail atau nomor telepon</label>
                 <input 
-                  type="email" 
+                  type="Email" 
                   id="email" 
                   placeholder="Masukkan e-mail atau nomor telepon" 
                   className="form-input"

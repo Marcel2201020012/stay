@@ -7,6 +7,17 @@
     z-index: 1;
 }
 
+.input-error {
+  border: 2px solid red;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+
 .headline {
     display: flex;
     align-items: center;
