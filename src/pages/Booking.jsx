@@ -2,21 +2,18 @@ import "../styles/Booking.css";
 import Navbar from "../components/Booking_Navbar";
 import Footer from "../components/Footer";
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-import { Link } from 'react-router-dom';
-
-import megaphoneIcon from '../images/booking-icons/megaphone_icon.svg'
-
+import megaphoneIcon from '../images/booking-icons/megaphone_icon.svg';
 
 function Booking() {
     const location = useLocation();
-    const { room } = location.state || {};
+    const { room, jumlahKamar = 1, totalHarga = room.price * jumlahKamar } = location.state || {};
 
     if (!room) return <div>Data Hotel Tidak Ditemukan</div>;
 
-    const pajak = room.price * 0.1;
-    const total = room.price + pajak;
+    const pajak = totalHarga * 0.1;
+    const total = totalHarga + pajak;
 
     const [formData, setFormData] = useState({
         userName: "",
@@ -47,7 +44,7 @@ function Booking() {
         }));
     };
 
-     const handleChangeDetails = (e) => {
+    const handleChangeDetails = (e) => {
         setExtraDetails(prev => ({
             ...prev,
             [e.target.name]: e.target.value,
@@ -55,7 +52,10 @@ function Booking() {
     };
 
     const toggleOption = (key) => {
-        setOptions((prev) => ({ ...prev, [key]: !prev[key] }));
+        setOptions(prev => ({
+            ...prev,
+            [key]: !prev[key],
+        }));
     };
 
     return (
@@ -80,7 +80,7 @@ function Booking() {
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="email">E-Mail</label>
-                        <input type="email" id="email" name="email" />
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
@@ -94,63 +94,27 @@ function Booking() {
                 <h3>Permintaan Tambahan</h3>
                 <p>
                     Beritahu hotel untuk menyediakan fasilitas tambahan untuk menyesuaikan
-                    pengalaman menginap Anda.
-                    Pilihan ini mungkin akan menambah biaya
-                    menginap!
+                    pengalaman menginap Anda. Pilihan ini mungkin akan menambah biaya menginap!
                 </p>
 
                 <div className="checkbox-row">
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={() => toggleOption("jenisKasur")}
-                            checked={options.jenisKasur}
-                        />
-                        Jenis Kasur
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={() => toggleOption("lantai")}
-                            checked={options.lantai}
-                        />
-                        Lantai Kamar
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={() => toggleOption("checkIn")}
-                            checked={options.checkIn}
-                        />
-                        Waktu Check-In
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={() => toggleOption("checkOut")}
-                            checked={options.checkOut}
-                        />
-                        Waktu Check-Out
-                    </label>
-
-                    <label>
-                        <input
-                            type="checkbox"
-                            onChange={() => toggleOption("lainnya")}
-                            checked={options.lainnya}
-                        />
-                        Lainnya
-                    </label>
+                    {["jenisKasur", "lantai", "checkIn", "checkOut", "lainnya"].map((item) => (
+                        <label key={item}>
+                            <input
+                                type="checkbox"
+                                onChange={() => toggleOption(item)}
+                                checked={options[item]}
+                            />
+                            {item.charAt(0).toUpperCase() + item.slice(1).replace(/([A-Z])/g, ' $1')}
+                        </label>
+                    ))}
                 </div>
 
                 <div className="conditional-options">
                     {options.jenisKasur && (
                         <div className="option-box">
-                            <label><input type="radio" name="jenisKasur" value="Deluxe" checked={extraDetails.jenisKasur === "Deluxe"} onChange={handleChangeDetails}/>Deluxe</label>
-                            <label><input type="radio" name="jenisKasur" value="Twin" checked={extraDetails.jenisKasur === "Twin"} onChange={handleChangeDetails}/>Twin</label>
+                            <label><input type="radio" name="jenisKasur" value="Deluxe" checked={extraDetails.jenisKasur === "Deluxe"} onChange={handleChangeDetails}/> Deluxe</label>
+                            <label><input type="radio" name="jenisKasur" value="Twin" checked={extraDetails.jenisKasur === "Twin"} onChange={handleChangeDetails}/> Twin</label>
                         </div>
                     )}
 
@@ -169,13 +133,13 @@ function Booking() {
 
                     {options.checkOut && (
                         <div className="option-box-horizontal">
-                            <label><input type="time"  name="checkOut" value={extraDetails.checkOut} onChange={handleChangeDetails}/></label>
+                            <label><input type="time" name="checkOut" value={extraDetails.checkOut} onChange={handleChangeDetails}/></label>
                         </div>
                     )}
 
                     {options.lainnya && (
                         <div className="option-box-horizontal">
-                            <input type="text"  name="lainnya" placeholder="Keterangan lainnya..." value={extraDetails.lainnya} onChange={handleChangeDetails}/>
+                            <input type="text" name="lainnya" placeholder="Keterangan lainnya..." value={extraDetails.lainnya} onChange={handleChangeDetails}/>
                         </div>
                     )}
                 </div>
@@ -185,38 +149,53 @@ function Booking() {
                 <div className="price-detail">
                     <h3>Detail Harga</h3>
 
+                    <p className="room-amount-info">
+                        Anda memesan <strong>{jumlahKamar}</strong> kamar
+                    </p>
+
                     <div className="price-row">
                         <span>Harga Kamar</span>
-                        <span>Rp {room.price.toLocaleString('id-ID')},-</span>
+                        <span>
+                            {jumlahKamar} x Rp {room.price.toLocaleString('id-ID')} = Rp {totalHarga.toLocaleString('id-ID')}
+                        </span>
                     </div>
 
                     <div className="price-row">
                         <span>Pajak</span>
-                        <span>Rp {pajak.toLocaleString('id-ID')},-</span>
+                        <span>Rp {pajak.toLocaleString('id-ID')}</span>
                     </div>
 
                     <hr />
 
                     <div className="price-row total">
                         <strong>Total</strong>
-                        <strong>Rp {total.toLocaleString('id-ID')},-</strong>
+                        <strong>Rp {total.toLocaleString('id-ID')}</strong>
                     </div>
 
                     <div className="pay-button-container">
-                        <Link to="/payment" state={{ total, contact: formData, extraDetails}}>
+                        <Link
+                            to="/payment"
+                            state={{
+                                total,
+                                jumlahKamar,
+                                contact: formData,
+                                extraDetails,
+                                room,
+                            }}
+                        >
                             <button className="pay-button">Lanjutkan Pembayaran ➜</button>
                         </Link>
                     </div>
 
                     <p className="terms">
-                        Dengan lanjut ke pembayaran, Anda telah menyetujui menyetujui{" "}
+                        Dengan lanjut ke pembayaran, Anda telah menyetujui{" "}
                         <a href="#">Syarat dan Ketentuan</a>, serta{" "}
                         <a href="#">Kebijakan Privasi</a> Stay
                     </p>
                 </div>
             </div>
 
-            <br></br>
+            <br />
             <Footer />
         </div>
     );
