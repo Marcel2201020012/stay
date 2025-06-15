@@ -342,16 +342,17 @@ function Booking() {
                 roomType2: selectedRoomType2,
                 extraDetails,
                 jumlahKamar,
+
                 totalHarga,
                 pajak,
                 total,
               }}
-              className="btn btn-success"
+              className="pay-button"
             >
               Lanjut ke Pembayaran
             </Link>
           ) : (
-            <button className="btn btn-disabled" disabled>
+            <button className="pay-button" disabled>
               Isi Data Terlebih Dahulu
             </button>
           )}
