@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/TipeKamarCard.css';
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function TipeKamarCard({ room }) {
+  const [jumlahKamar, setJumlahKamar] = useState(1);
+  const navigate = useNavigate();
+
+  const handleReservasi = () => {
+    navigate('/booking', {
+      state: {
+        room,
+        jumlahKamar,
+        totalHarga: jumlahKamar * room.price,
+      },
+    });
+  };
+
   return (
     <div className="tipe-kamar-card">
       <img src={room.image} alt={room.name} className="room-image" />
@@ -11,7 +23,7 @@ function TipeKamarCard({ room }) {
       <div className="room-details">
         <h4>{room.name}</h4>
         <p className="room-desc">{room.description}</p>
-        
+
         <ul className="room-icons">
           {room.details.map((item, index) => (
             <li key={index}>
@@ -26,10 +38,28 @@ function TipeKamarCard({ room }) {
         <div className="bottom-info">
           <span className="availability">{room.availability}</span>
           <div className="price-reserve">
-            <span className="price">Rp{room.price.toLocaleString('id-ID')}</span>
-            <Link to="/booking" state={{room}}>
-              <button className="reserve-btn">Reservasi</button>
-            </Link>
+            <span className="price">
+              Rp{(room.price * jumlahKamar).toLocaleString('id-ID')}
+            </span>
+
+            <div className="jumlah-kamar-select">
+              <label htmlFor="jumlahKamar">Jumlah: </label>
+              <select
+                id="jumlahKamar"
+                value={jumlahKamar}
+                onChange={(e) => setJumlahKamar(Number(e.target.value))}
+              >
+                {[...Array(5)].map((_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <button className="reserve-btn" onClick={handleReservasi}>
+              Reservasi
+            </button>
           </div>
         </div>
       </div>
