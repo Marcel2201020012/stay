@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import '../styles/Kupon_List.css';
-import copy from '../images/kupon-list-icons/copy-icon.svg'
+import copy from '../images/kupon-list-icons/copy-icon.svg';
 
 const CouponCard = ({ title, minTrans, code, label = 'DISKON APRIL 10%' }) => {
+    const [isCopied, setIsCopied] = useState(false);
+
     const handleCopy = () => {
         navigator.clipboard.writeText(code);
-        alert('Kode disalin!');
+        setIsCopied(true); // Ubah tombol jadi "DISALIN"
     };
 
     return (
@@ -21,7 +24,13 @@ const CouponCard = ({ title, minTrans, code, label = 'DISKON APRIL 10%' }) => {
                         <img src={copy} alt="Salin" />
                         <span>{code}</span>
                     </div>
-                    <button onClick={handleCopy}>SALIN</button>
+                    <button
+                        onClick={handleCopy}
+                        disabled={isCopied}
+                        className={isCopied ? 'disabled' : ''}
+                    >
+                        {isCopied ? 'DISALIN' : 'SALIN'}
+                    </button>
                 </div>
             </div>
         </div>
